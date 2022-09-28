@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300');
+body{
+  margin: 0;
+  padding: 0;
+  background: url(background.jpg);
+  background-size: cover;
+  font-family: 'Quicksand', sans-serif;
+}
+.neon{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  margin: 0;
+  padding: 0 15px;
+  font-size: 6em;
+  color: #fff;
+  text-shadow: 0 0 20px #ff005b;
+  transition: 0.5s;
+}
+.neon::after{
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 0 15px;
+  z-index: -1;
+  color: #ff005b;
+  filter: blur(15px);
+}
+.neon::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fe3a80;
+  z-index: -2;
+  opacity: 0.5;
+  filter: blur(50px);
+}
+.neon:hover{
+  text-shadow: 0 0 20px #9501ff;
+}
+.neon:hover::after{
+  text-shadow: 0 0 40px #9501ff;
+}
+.neon:hover::before{
+  background: #9d2ced;
+}
